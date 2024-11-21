@@ -1,0 +1,23 @@
+class Solution {
+    int isFind(int nums[],int t,int i){
+        i=i+1;
+        for(; i<nums.length;i++){
+            if(nums[i]==t)
+            return i;
+        }
+        return -1;
+    }
+    public int[] twoSum(int[] nums, int target) {
+         for(int i =0; i<nums.length;i++){
+            int d=nums[i];
+            int t=target-d;
+            int j=isFind(nums,t,i);
+            if(j!=-1){
+                int arr[]={i,j};
+            return arr;
+            }
+        }
+        int arr[]={-1,-1};
+            return arr;
+    }
+}
