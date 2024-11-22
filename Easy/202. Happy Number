@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isHappy(int n) {
+        int s=0;
+        for(int i=n;i!=0||s>9;i=i/10){
+            if(i==0){
+            i=s;
+            s=0;}
+            int d=i%10;
+            s=s+d*d;
+        }
+        if(s==1||s==7)
+        return true;
+        else return false;
+    }
+}
