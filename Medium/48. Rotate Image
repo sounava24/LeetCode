@@ -1,0 +1,23 @@
+class Solution {
+    public void rotate(int[][] matrix) {
+        int n=matrix.length;
+        //transpose
+        int tr[][]= new int[n][n];
+        for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+           tr[j][i]=matrix[i][j];
+        }
+    }
+
+
+
+        //x mirror
+    for(int i=0;i<n;i++){
+        int k=n-1;
+        for(int j=0;j<n;j++){
+           matrix[i][j]=tr[i][k];
+           k--;
+        }
+    }
+    }
+}
