@@ -1,0 +1,12 @@
+class Solution {
+    int op(String s)
+    {
+        if(s.length()==1)
+        return (s.charAt(0)-64);
+        else
+        return (int)Math.pow(26,s.length()-1)*(s.charAt(0)-64)+op(s.substring(1));
+    }
+    public int titleToNumber(String columnTitle) {
+        return op(columnTitle);
+    }
+}
