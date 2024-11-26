@@ -1,0 +1,17 @@
+class Solution {
+   
+    public String convertToTitle(int columnNumber) {
+        String op="";
+        int n=columnNumber;
+        while(n!=0){
+            int d=n%26;
+            if(d==0){
+            op="Z"+op;
+            n=n/26-1;}
+            else{
+            op=(char)(64+d)+""+op;;
+            n=n/26;}
+        }
+        return op;
+    }
+}
