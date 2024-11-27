@@ -1,0 +1,7 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int a[]= Arrays.stream(nums).distinct().toArray();
+        System.arraycopy(a,0,nums,0,a.length);
+        return a.length;
+    }
+}
