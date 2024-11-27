@@ -1,0 +1,7 @@
+
+
+class Solution {
+    public double average(int[] salary) {  
+        return Arrays.stream(salary).filter(n -> n >  Arrays.stream(salary).min().orElse(Integer.MIN_VALUE) && n < Arrays.stream(salary).max().orElse(Integer.MAX_VALUE)).average().orElse(0.0);  
+    }
+}
