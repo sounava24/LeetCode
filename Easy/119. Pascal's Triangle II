@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> getRow(int rowIndex) {
+        int numRows=rowIndex;
+        List<List<Integer>> pas = new ArrayList<>();
+        if(numRows>=0){List<Integer> row = new ArrayList<>(Arrays.asList(1));pas.add(row);}
+        if(numRows>=1){List<Integer> row = new ArrayList<>(Arrays.asList(1,1));pas.add(row);}
+        if(numRows>=2){
+            for(int i =2;i<=numRows;i++){
+                List<Integer> row = new ArrayList<>();
+                for(int j=0;j<=i;j++){
+                    if(j==0||j==i){
+                    row.add(1);
+                    }
+                    else
+                    {
+                        row.add(pas.get(i-1).get(j-1)+pas.get(i-1).get(j));
+                    }
+            }
+            pas.add(row);
+            }
+        }
+        return pas.get(rowIndex);
+   
+    }
+}
